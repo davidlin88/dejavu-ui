@@ -1,0 +1,125 @@
+@use 'sass:math';
+@use 'sass:map';
+// antd提取的element+中未被抽成变量的参数
+$zindex-modal-mask: 1000;
+$zindex-modal: 1000;
+$modal-mask-bg: rgba(0, 0, 0, 0.5);
+$font-variant-base: tabular-nums;
+$line-height-base: 1.5715;
+$font-feature-settings: 'tnum';
+$component-background: #fff;
+$zindex-popup-close: 10;
+$modal-close-color: var(--ant-text-color-secondary);
+
+$modal-content-bg: $component-background;
+
+// Padding
+$padding: () !default;
+$padding: map.merge(
+  (
+    'md': 16px,
+    'lg': 24px,
+  ),
+  $padding
+);
+
+// Color
+$colors: () !default;
+$colors: map.deep-merge(
+  (
+    'black': #000,
+  ),
+  $colors
+);
+// Color - alias
+$black: map.get($colors, 'black');
+$heading-color: rgba(map.get($colors, 'black'), 0.85);
+
+$color-black: map.get($colors, 'black') !default;
+
+$text-color: () !default;
+$text-color: map.deep-merge(
+  (
+    'primary': rgba(map.get($colors, 'black'), 0.85),
+    'secondary': rgba(map.get($colors, 'black'), 0.45),
+  ),
+  $text-color
+);
+$border-color-split: hsl(0, 0%, 94%);
+
+// Typography
+$font-size: () !default;
+$font-size: map.merge(
+  (
+    'sm': 12px,
+    'base': 14px,
+    'lg': 16px,
+  ),
+  $font-size
+);
+
+// Border
+$border-width-base: 1px;
+$border-style-base: solid;
+
+$border-radius: () !default;
+$border-radius: map.merge(
+  (
+    'base': 4px,
+    'small': 2px,
+    'round': 20px,
+    'circle': 100%,
+  ),
+  $border-radius
+);
+
+// Shadow
+$shadow-color: rgba(0, 0, 0, 0.15);
+$shadow-color-inverse: $component-background;
+$shadow: () !default;
+$shadow: map.merge(
+  (
+    'base': var(--ant-shadow-1-down),
+    '1-up': 0 -2px 8px var(--ant-shadow-color),
+    '1-down': 0 2px 8px var(--ant-shadow-color),
+    '1-left': -2px 0 8px var(--ant-shadow-color),
+    '1-right': 2px 0 8px var(--ant-shadow-color),
+    '2': 0 4px 12px var(--ant-shadow-color),
+  ),
+  $shadow
+);
+
+// 杂项
+$icon-color: inherit;
+$icon-color-hover: rgba(map.get($colors, 'black'), 0.75);
+
+// Modal
+$modal: () !default;
+$modal: map.merge(
+  (
+    'header-padding-vertical': var(--ant-padding-md),
+    'header-padding-horizontal': var(--ant-padding-lg),
+    'body-padding': var(--ant-padding-lg),
+    'header-bg': $component-background,
+    'header-padding': var(--ant-modal-header-padding-vertical)
+      var(--ant-modal-header-padding-horizontal),
+    'header-border-width': $border-width-base,
+    'header-border-style': $border-style-base,
+    'header-title-line-height': 22px,
+    'header-title-font-size': var(--ant-font-size-lg),
+    'header-border-color-split': $border-color-split,
+    'header-close-size': 56px,
+    'content-bg': $component-background,
+    'heading-color': $heading-color,
+    'close-color': var(--ant-text-color-secondary),
+    'footer-bg': transparent,
+    'footer-border-color-split': $border-color-split,
+    'footer-border-style': $border-style-base,
+    'footer-padding-vertical': 10px,
+    'footer-padding-horizontal': 16px,
+    'footer-border-width': $border-width-base,
+    'mask-bg': rgba($black, 0.45),
+    'confirm-body-padding': 32px 32px 24px,
+  ),
+  $modal
+);

@@ -1,0 +1,22 @@
+@use 'sass:map';
+
+// CSS var
+@use 'common/var.scss' as *;
+@use 'mixins/var' as *;
+
+:root {
+  --ant-icon-color: #{$icon-color};
+  --ant-icon-color-hover: #{$icon-color-hover};
+  --ant-shadow-color: #{$shadow-color};
+  --ant-shadow-color-inverse: #{$shadow-color-inverse};
+  // Padding
+  @include set-component-css-var('padding', $padding);
+  // Shadow
+  @include set-component-css-var('shadow', $shadow);
+  // Typography
+  @include set-component-css-var('font-size', $font-size);
+  // Border
+  @include set-component-css-var('border-radius', $border-radius);
+  // --ant-text-color-${type}
+  @include set-component-css-var('text-color', $text-color);
+}

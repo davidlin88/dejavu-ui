@@ -1,0 +1,74 @@
+@use '../../style/common/var.scss' as *;
+@use '../../style/mixins/index.scss' as *;
+@use '../../style/mixins/var.scss' as *;
+
+@include b(modal) {
+  @include set-component-css-var('modal', $modal);
+  @include reset-component();
+  @include modal-mask();
+
+  position: relative;
+  top: 100px;
+  width: auto;
+  margin: 0 auto;
+
+  @include e(wrap) {
+    z-index: $zindex-modal;
+  }
+  @include e(content) {
+    position: relative;
+    background: $modal-content-bg;
+    border-radius: var(--ant-border-radius-base);
+    box-shadow: var(--ant-shadow-2);
+    pointer-events: auto;
+  }
+  @include e(close) {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: $zindex-popup-close;
+    padding: 0;
+    color: var(--ant-text-color-secondary);
+    font-weight: 700;
+    line-height: 1;
+    text-decoration: none;
+    background: transparent;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    &-x {
+      display: block;
+      width: var(--ant-modal-header-close-size);
+      height: var(--ant-modal-header-close-size);
+      font-size: var(--ant-font-size-lg);
+      font-style: normal;
+      line-height: var(--ant-modal-header-close-size);
+      text-align: center;
+      text-transform: none;
+      text-rendering: auto;
+      &:focus,
+      &:hover {
+        color: var(--ant-icon-color-hover);
+      }
+    }
+  }
+  @include e(header) {
+    padding: var(--ant-modal-header-padding);
+    color: var(--ant-text-color-primary);
+    background: var(--ant-modal-header-bg);
+    border-radius: var(--ant-border-radius-base) var(--ant-border-radius-base) 0 0;
+  }
+  @include e(body) {
+    padding: var(--ant-modal-body-padding);
+    font-size: var(--ant-font-size-base);
+    line-height: $line-height-base;
+    word-wrap: break-word;
+  }
+  @include e(footer) {
+    padding: var(--ant-modal-footer-padding-vertical) var(--ant-modal-footer-padding-horizontal);
+    text-align: right;
+    background: var(--ant-modal-footer-bg);
+    border-top: var(--ant-modal-footer-border-width) var(--ant-modal-footer-border-style)
+      var(--ant-modal-footer-border-color-split);
+  }
+}

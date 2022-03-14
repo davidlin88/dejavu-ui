@@ -1,0 +1,9 @@
+@use 'sass:map';
+@use '../common/var.scss' as *;
+
+// set all css var for component by map
+@mixin set-component-css-var($name, $variables) {
+  @each $attribute, $value in $variables {
+    --ant-#{$name}-#{$attribute}: #{$value};
+  }
+}
