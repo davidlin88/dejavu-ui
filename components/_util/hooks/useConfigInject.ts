@@ -6,8 +6,8 @@ export default (
 ): {
   prefixCls: ComputedRef<string>;
 } => {
-  const globalRrefixCls = 'ant';
-  const prefixCls = computed(() => (name ? `${globalRrefixCls}-${name}` : globalRrefixCls));
+  const globalPrefixCls = 'ant';
+  const prefixCls = computed(() => (name ? `${globalPrefixCls}-${name}` : globalPrefixCls));
 
   return {
     prefixCls,

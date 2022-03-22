@@ -1,0 +1,40 @@
+@use '../../style/common/var.scss' as *;
+@use '../../style/mixins/index.scss' as *;
+
+@include b(layout) {
+  @include set-component-css-var('layout', $layout);
+
+  display: flex;
+  flex-direction: column;
+  &-header {
+    height: var(--ant-layout-header-height);
+    background: var(--ant-layout-header-background);
+    padding: var(--ant-layout-header-padding);
+  }
+  @include m(has-sider) {
+    flex-direction: row;
+  }
+}
+
+@include b(layout-sider) {
+  position: relative;
+  background: var(--ant-layout-sider-background);
+  color: var(--ant-color-white);
+  transition: all 0.2s;
+  height: 100%;
+  @include m(has-trigger) {
+    padding-bottom: var(--ant-layout-trigger-height);
+  }
+
+  @include e(children) {
+  }
+  @include e(trigger) {
+    position: fixed;
+    bottom: 0;
+    height: var(--ant-layout-trigger-height);
+    line-height: var(--ant-layout-trigger-height);
+    text-align: center;
+    transition: all 0.2s;
+    cursor: pointer;
+  }
+}

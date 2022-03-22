@@ -9,6 +9,8 @@
   --ant-icon-color-hover: #{$icon-color-hover};
   --ant-shadow-color: #{$shadow-color};
   --ant-shadow-color-inverse: #{$shadow-color-inverse};
+  // Color
+  @include set-component-css-var('color', $colors);
   // Padding
   @include set-component-css-var('padding', $padding);
   // Shadow

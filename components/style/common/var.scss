@@ -28,6 +28,7 @@ $colors: () !default;
 $colors: map.deep-merge(
   (
     'black': #000,
+    'white': #fff,
   ),
   $colors
 );
@@ -122,4 +123,18 @@ $modal: map.merge(
     'confirm-body-padding': 32px 32px 24px,
   ),
   $modal
+);
+
+// Layout
+$layout: () !default;
+$layout-background: #001529;
+$layout: map.merge(
+  (
+    'header-height': 64px,
+    'header-background': $layout-background,
+    'header-padding': 0 50px,
+    'sider-background': $layout-background,
+    'trigger-height': 48px,
+  ),
+  $layout
 );

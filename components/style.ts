@@ -2,3 +2,4 @@
 
 // 组件样式
 import './modal/style';
+import './layout/style';

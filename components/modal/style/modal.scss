@@ -1,6 +1,5 @@
 @use '../../style/common/var.scss' as *;
 @use '../../style/mixins/index.scss' as *;
-@use '../../style/mixins/var.scss' as *;
 
 @include b(modal) {
   @include set-component-css-var('modal', $modal);

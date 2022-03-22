@@ -16,7 +16,7 @@ export default function classNames(...args: any[]) {
       }
     } else if (isObject(value)) {
       for (const name in value) {
-        if (Object.prototype.hasOwnProperty.call(value, name)) {
+        if (value[name]) {
           classes.push(name);
         }
       }
